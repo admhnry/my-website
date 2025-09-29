@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 60%;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-container, .form-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ticket Purchase System</h1>
+</header>
+
+<div class="container">
+    <div class="image-container">
+        <img src="images1/snbj.png" alt="Stadium Map">
+    </div>
+
+    <div class="form-container">
+        <form action="seatsection.php" method="post">
+            <select name="gate" required>
+                <option value="">Select a Gate</option>
+                <option value="A" <?php echo ($selectedGate == 'A') ? 'selected' : ''; ?>>Gate A</option>
+                <option value="B" <?php echo ($selectedGate == 'B') ? 'selected' : ''; ?>>Gate B</option>
+                <option value="C" <?php echo ($selectedGate == 'C') ? 'selected' : ''; ?>>Gate C</option>
+                <option value="D" <?php echo ($selectedGate == 'D') ? 'selected' : ''; ?>>Gate D</option>
+                <option value="E" <?php echo ($selectedGate == 'E') ? 'selected' : ''; ?>>Gate E</option>
+                <option value="F" <?php echo ($selectedGate == 'F') ? 'selected' : ''; ?>>Gate F</option>
+            </select>
+
+            <select name="level" required>
+                <option value="">Select a Level</option>
+                <option value="1" <?php echo ($selectedLevel == '1') ? 'selected' : ''; ?>>Level 1</option>
+                <option value="2" <?php echo ($selectedLevel == '2') ? 'selected' : ''; ?>>Level 2</option>
+                <option value="3" <?php echo ($selectedLevel == '3') ? 'selected' : ''; ?>>Level 3</option>
+            </select>
+
+            <!-- Seat Section Dropdown -->
+            <select name="seat_section" required <?php echo (empty($availableSeats)) ? 'disabled' : ''; ?>>
+                <option value="">Select a Seat Section</option>
+                <?php
+                // Display seat sections based on the selected gate and level
+                if (!empty($availableSeats)) {
+                    foreach ($availableSeats as $seat) {
+                        echo "<option value='$seat'>$seat</option>";
+                    }
+                }
+                ?>
+            </select>
+            
+            <input type="submit" value="Buy Ticket">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "mywebsite/mywebsite",
+  "description": "My website description",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
+

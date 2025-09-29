@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Ticketing System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; }
+        header { background: #24292f; color: #fff; padding: 1em 2em; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        .container { max-width: 900px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; }
+        h1, h2 { color: #24292f; }
+        .tickets { display: flex; flex-wrap: wrap; gap: 2em; }
+        .ticket { background: #f3f3f3; padding: 1em; border-radius: 6px; flex: 1 1 220px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+        .buy-btn { display: inline-block; padding: 0.5em 1em; background: #2563eb; color: #fff; border-radius: 4px; text-decoration: none; margin-top: 1em; }
+        footer { text-align: center; padding: 2em; color: #888; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Football Ticketing System</h1>
+        <nav>
+            <a href="#matches">Matches</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2 id="matches">Upcoming Matches</h2>
+            <div class="tickets">
+                <div class="ticket">
+                    <h3>Team A vs Team B</h3>
+                    <p>Date: 2025-10-15<br>Location: National Stadium</p>
+                    <p>Price: $50</p>
+                    <a class="buy-btn" href="#">Buy Ticket</a>
+                </div>
+                <div class="ticket">
+                    <h3>Team C vs Team D</h3>
+                    <p>Date: 2025-10-22<br>Location: City Arena</p>
+                    <p>Price: $40</p>
+                    <a class="buy-btn" href="#">Buy Ticket</a>
+                </div>
+                <div class="ticket">
+                    <h3>Team E vs Team F</h3>
+                    <p>Date: 2025-11-01<br>Location: Riverside Field</p>
+                    <p>Price: $60</p>
+                    <a class="buy-btn" href="#">Buy Ticket</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 id="about">About</h2>
+            <p>This is a demo football ticketing system. Customers can view available matches and (in a real system) buy tickets online. This static version is for portfolio/demo use and does not include backend functionality.</p>
+        </section>
+        <section>
+            <h2 id="contact">Contact</h2>
+            <p>Email: info@footballtickets.com<br>
+            Phone: +123 456 7890</p>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Football Ticketing System. All rights reserved.
+    </footer>
+</body>
+</html>
+		
